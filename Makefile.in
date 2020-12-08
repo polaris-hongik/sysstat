@@ -344,7 +344,7 @@ tests/ini/inisar.o: tests/ini/inisar.c tests/ini/sa.h tests/ini/iniversion.h tes
 tests/ini/inisar: tests/ini/inisar.o tests/ini/act_sar.o tests/ini/format_sar.o tests/ini/sa_common.o tests/ini/pr_stats.o tests/ini/librdstats_light.a tests/ini/libsyscom.a
 
 email_alert: email_alert.c
-        gcc -c -o email_alert email_alert.c
+	gcc -c -o email_alert email_alert.c
 
 ifdef REQUIRE_NLS
 locales: $(NLSGMO)
