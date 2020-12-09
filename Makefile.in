@@ -315,6 +315,10 @@ mpstat: mpstat.o librdstats_light.a libsyscom.a
 
 cifsiostat.o: cifsiostat.c cifsiostat.h count.h rd_stats.h version.h common.h
 
+email_alert.o: email_alert.c
+
+email_alert: email_alert.o
+
 cifsiostat: cifsiostat.o librdstats_light.a libsyscom.a
 
 tests/ini/sa_common.o: tests/ini/sa_common.c tests/ini/iniversion.h tests/ini/sa.h tests/ini/common.h tests/ini/rd_stats.h tests/ini/rd_sensors.h tests/ini/ioconf.h tests/ini/inisysconfig.h
@@ -342,9 +346,6 @@ tests/ini/librdstats_light.a: tests/ini/rd_stats_light.o tests/ini/count_light.o
 tests/ini/inisar.o: tests/ini/inisar.c tests/ini/sa.h tests/ini/iniversion.h tests/ini/common.h tests/ini/rd_stats.h tests/ini/rd_sensors.h
 
 tests/ini/inisar: tests/ini/inisar.o tests/ini/act_sar.o tests/ini/format_sar.o tests/ini/sa_common.o tests/ini/pr_stats.o tests/ini/librdstats_light.a tests/ini/libsyscom.a
-
-email_alert: email_alert.c
-	gcc -c -o email_alert email_alert.c
 
 ifdef REQUIRE_NLS
 locales: $(NLSGMO)

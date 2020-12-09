@@ -176,7 +176,9 @@ void chkstatus(void){
 void print_Ascii_Art(FILE *fptr)
 {
     char read_string[500];
-
+    
+    fseek(fptr,0L,SEEK_SET);
+    system("clear");
     while(fgets(read_string,sizeof(read_string),fptr) != NULL)
         printf(ANSI_COLOR_YELLOW "%s" ANSI_COLOR_RESET,read_string);
 }
@@ -184,15 +186,16 @@ void print_Ascii_Art(FILE *fptr)
 void main(){
     init();
     int t;
+    File *img = fopen("logo","r");
+    print_Ascii_Art(img);    
+
     printf("몇 분 주기로 측정하시겠습니까? : ");
     scanf("%d",&t);
-    
+     
     time_t ct;
     struct tm tm;
 
     while(1){
-        system("clear");
-        FILE *img = fopen("logo","r");
         print_Ascii_Art(img);
         chkstatus();
         ct = time(NULL);
