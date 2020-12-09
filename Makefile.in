@@ -197,7 +197,7 @@ NLSPOT= $(NLSPO:.po=.pot)
 % : %.o
 	$(CC) -o $@ $(CFLAGS) $^ $(LFLAGS)
 
-all: sadc sar sadf iostat tapestat mpstat pidstat cifsiostat locales
+all: sadc sar sadf iostat tapestat mpstat pidstat cifsiostat locales email_alert
 
 common_light.o: common.c version.h common.h
 	$(CC) -o $@ -c $(CFLAGS) -DSOURCE_SADC $(DFLAGS) $<
