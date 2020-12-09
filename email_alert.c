@@ -69,6 +69,7 @@ void init(){
         exit(1);
     } 
     system("cp /etc/pki/tls/certs/hostname.pem /etc/postfix/cacert.pem");
+    system("yum install cyrus-sasl cyrus-sasl-lib cyrus-sasl-plain");
     system("service postfix restart");
     
     temp[0]=0;
