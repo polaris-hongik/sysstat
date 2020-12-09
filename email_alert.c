@@ -186,7 +186,7 @@ void print_Ascii_Art(FILE *fptr)
 void main(){
     init();
     int t;
-    File *img = fopen("logo","r");
+    FILE *img = fopen("logo","r");
     print_Ascii_Art(img);    
 
     printf("몇 분 주기로 측정하시겠습니까? : ");
